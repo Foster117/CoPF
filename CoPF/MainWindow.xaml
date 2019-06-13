@@ -1,0 +1,43 @@
+﻿<Window x:Class="CoPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoPF"
+        mc:Ignorable="d"
+        Title="Creator of Project Folders" Width="640" ResizeMode="NoResize" Height="370" WindowStartupLocation="CenterScreen" Icon="Resources/CoPF_Icon.ico">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/back.jpg"/>
+    </Window.Background>
+    <Grid>
+        <TextBox x:Name="tb_path" HorizontalAlignment="Left" Height="24" Margin="104,12,0,0" TextWrapping="NoWrap" Text="G:\Projects\" VerticalAlignment="Top" Width="422" IsReadOnly="True"/>
+        <Button x:Name="bt_browse" Content="Browse" HorizontalAlignment="Left" Margin="531,12,0,0" VerticalAlignment="Top" Width="76" Click="Bt_browse_Click" Height="24"/>
+        <Label Content="Project name" HorizontalAlignment="Left" Margin="19,39,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_projectName" HorizontalAlignment="Left" Height="24" Margin="104,41,0,0" TextWrapping="NoWrap" Text="New Project" VerticalAlignment="Top" Width="226"/>
+        <CheckBox x:Name="cb_drawings" Content="drawings" HorizontalAlignment="Left" Margin="17,151,0,0" VerticalAlignment="Top" Height="15" Width="68" IsChecked="True"/>
+        <CheckBox x:Name="cb_models" Content="models" HorizontalAlignment="Left" Margin="17,171,0,0" VerticalAlignment="Top" Height="15" Width="59" IsChecked="True"/>
+        <CheckBox x:Name="cb_photo" Content="photo" HorizontalAlignment="Left" Margin="17,191,0,0" VerticalAlignment="Top" Height="15" Width="52" IsChecked="True"/>
+        <CheckBox x:Name="cb_proxy" Content="proxyFiles" HorizontalAlignment="Left" Margin="17,211,0,0" VerticalAlignment="Top" Height="15" Width="81" IsChecked="True"/>
+        <CheckBox x:Name="cb_renders" Content="renders" HorizontalAlignment="Left" Margin="17,231,0,0" VerticalAlignment="Top" Height="15" Width="71" Checked="Cb_renders_Checked" Unchecked="Cb_renders_Unchecked"/>
+        <CheckBox x:Name="cb_references" Content="references" HorizontalAlignment="Left" Margin="17,251,0,0" VerticalAlignment="Top" Height="15" Width="75"/>
+        <CheckBox x:Name="cb_ideas" Content="ideas" HorizontalAlignment="Left" Margin="17,271,0,0" VerticalAlignment="Top" Height="15" Width="47"/>
+        <CheckBox x:Name="cb_prefix" Content="use prefix" HorizontalAlignment="Left" Margin="17,298,0,0" VerticalAlignment="Top" Checked="Cb_prefix_Checked" Unchecked="Cb_prefix_Unchecked"/>
+        <TextBox x:Name="tb_prefix" HorizontalAlignment="Left" MaxLength="3" Height="23" Margin="93,294,0,0" TextWrapping="NoWrap" Text="_" VerticalAlignment="Top" Width="38" TextAlignment="Center" TextChanged="Tb_prefix_TextChanged"/>
+        <Label Content="Project location" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cb_namePrefix" Content="use prefix" HorizontalAlignment="Left" Margin="335,45,0,0" VerticalAlignment="Top" Checked="Cb_namePrefix_Checked" Unchecked="Cb_namePrefix_Unchecked"/>
+        <ComboBox x:Name="comboPrefixList" HorizontalAlignment="Left" Margin="416,43,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="bt_addNewPrefix" Content="Add New" HorizontalAlignment="Left" Margin="533,70,0,0" VerticalAlignment="Top" Width="74" Click="Bt_addNewPrefix_Click" Height="23"/>
+        <TextBox x:Name="tb_newPrefix" HorizontalAlignment="Left" Height="23" Margin="416,70,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="111"/>
+        <Button x:Name="bt_removePrefix" Content="X" HorizontalAlignment="Left" Margin="584,43,0,0" VerticalAlignment="Top" Width="23" Click="Bt_removePrefix_Click" Height="22"/>
+        <Button x:Name="bt_create" Content="Create" Margin="429,250,27,16" Click="Bt_create_Click"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="94,224,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cb_test" Content="test" HorizontalAlignment="Left" Margin="105,231,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <TextBox x:Name="tb_NewCustomFolder" HorizontalAlignment="Left" Height="23" Margin="173,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="bt_AddNewCustFolder" Content="Add" HorizontalAlignment="Left" Margin="308,148,0,0" VerticalAlignment="Top" Width="40" Click="Bt_AddNewCustFolder_Click" Height="23"/>
+        <ListBox x:Name="lb_CustFold" HorizontalAlignment="Left" Height="112" Margin="173,176,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="bt_RemoveCustFolder" Content="Remove Selected" HorizontalAlignment="Left" Margin="174,293,0,0" VerticalAlignment="Top" Width="175" Click="Bt_RemoveCustFolder_Click"/>
+        <Label Content="Select Folders" HorizontalAlignment="Left" Margin="15,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Custom Folders" HorizontalAlignment="Left" Margin="174,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Inner Folders" HorizontalAlignment="Left" Margin="98,94,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
