@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.VisualBasic.Devices;
 
 namespace CoPF
 {
@@ -13,6 +14,7 @@ namespace CoPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Audio 
         DataIO io = new DataIO();
         Regex regex;
         //static public string Path { get; set; }
@@ -248,5 +250,6 @@ namespace CoPF
         {
             cb_test.IsEnabled = false;
         }
+
     }
 }
