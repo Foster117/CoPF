@@ -17,7 +17,7 @@ namespace CoPF
         //Audio 
         DataIO io = new DataIO();
         Regex regex;
-        //static public string Path { get; set; }
+        static public string Path { get; set; }
         //static public string ProjectName { get; set; }
         static public List<string> namePrefixes;
         static public List<string> userFolders = new List<string>();
@@ -43,6 +43,7 @@ namespace CoPF
         {
             namePrefixes = io.ReadData();
             comboPrefixList.ItemsSource = namePrefixes;
+            tb_path.Text = MainWindow.Path;
         }
 
         // EVENTS
@@ -64,6 +65,8 @@ namespace CoPF
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 tb_path.Text = folderBrowserDialog.SelectedPath;
+                MainWindow.Path = folderBrowserDialog.SelectedPath;
+                io.WriteData(namePrefixes);
             }
         }
 

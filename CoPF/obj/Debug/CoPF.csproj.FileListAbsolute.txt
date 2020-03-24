@@ -73,3 +73,17 @@ D:\OneDrive\_Code_Learning\_C#_Projects\CoPF\CoPF\obj\Debug\CoPF.csproj.Generate
 D:\OneDrive\_Code_Learning\_C#_Projects\CoPF\CoPF\obj\Debug\CoPF.csproj.CoreCompileInputs.cache
 D:\OneDrive\_Code_Learning\_C#_Projects\CoPF\CoPF\obj\Debug\CoPF.exe
 D:\OneDrive\_Code_Learning\_C#_Projects\CoPF\CoPF\obj\Debug\CoPF.pdb
+C:\Users\Foster117\Desktop\CoPF\CoPF\bin\Debug\CoPF.exe.config
+C:\Users\Foster117\Desktop\CoPF\CoPF\bin\Debug\CoPF.exe
+C:\Users\Foster117\Desktop\CoPF\CoPF\bin\Debug\CoPF.pdb
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.csprojAssemblyReference.cache
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\MainWindow.g.cs
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\App.g.cs
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF_MarkupCompile.cache
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF_MarkupCompile.lref
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\MainWindow.baml
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.g.resources
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.Properties.Resources.resources
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.csproj.GenerateResource.cache
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.exe
+C:\Users\Foster117\Desktop\CoPF\CoPF\obj\Debug\CoPF.pdb

@@ -13,19 +13,19 @@ namespace CoPF
             {
                 FileStream filestream = File.Create(@"prefconfig.cpf");
                 BinaryWriter writer = new BinaryWriter(filestream);
+
+                writer.Write(MainWindow.Path);
                 writer.Write(namePrefixes.Count);
                 foreach (string prefix in namePrefixes)
                 {
                     writer.Write(prefix);
                 }
-
                 writer.Close();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-
         }
 
         public List<string> ReadData()
@@ -36,6 +36,7 @@ namespace CoPF
 
             try
             {
+                MainWindow.Path = reader.ReadString();
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
