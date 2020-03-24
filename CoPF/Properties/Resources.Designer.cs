@@ -81,11 +81,12 @@ namespace CoPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound_back {
+        internal static byte[] sound {
             get {
-                return ResourceManager.GetStream("sound_back", resourceCulture);
+                object obj = ResourceManager.GetObject("sound", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

@@ -37,6 +37,10 @@ namespace CoPF
             try
             {
                 MainWindow.Path = reader.ReadString();
+                if (true)
+                {
+
+                }
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
@@ -48,6 +52,7 @@ namespace CoPF
             catch (Exception)
             {
                 reader.Close();
+                MainWindow.Path = "C:\\";
                 return new List<string>();
             }
 

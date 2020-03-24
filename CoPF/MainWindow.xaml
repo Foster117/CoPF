@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoPF"
         mc:Ignorable="d"
-        Title="Creator of Project Folders" Width="654.666" ResizeMode="NoResize" Height="372.667" WindowStartupLocation="CenterScreen" Icon="Resources/CoPF_Icon.ico">
+        Title="Project Directory Creator" Width="654.666" ResizeMode="NoResize" Height="372.667" WindowStartupLocation="CenterScreen" Icon="Resources/CoPF_Icon.ico">
     <Window.Resources>
         <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
         <Style x:Key="GroupBoxStyle1" TargetType="{x:Type GroupBox}">
@@ -80,5 +80,7 @@
         <ListBox x:Name="lb_CustFold" HorizontalAlignment="Left" Height="112" Margin="173,174,0,0" VerticalAlignment="Top" Width="175"/>
         <Button x:Name="bt_RemoveCustFolder" Content="Remove Selected" HorizontalAlignment="Left" Margin="174,291,0,0" VerticalAlignment="Top" Width="175" Click="Bt_RemoveCustFolder_Click"/>
         <Label Content="Custom Folders" HorizontalAlignment="Left" Margin="173,120,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="bt_about" Content="About" Margin="376,231,12,83" Click="bt_about_Click"/>
+        <CheckBox x:Name="cb_music" Content="music on/off" HorizontalAlignment="Left" Margin="537,209,0,0" VerticalAlignment="Top" IsChecked="True" Checked="cb_music_Checked" Unchecked="cb_music_Unchecked"/>
     </Grid>
 </Window>

@@ -5,7 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 using Microsoft.VisualBasic.Devices;
+using CoPF.Properties;
 
 namespace CoPF
 {
@@ -18,12 +20,12 @@ namespace CoPF
         DataIO io = new DataIO();
         Regex regex;
         static public string Path { get; set; }
-        //static public string ProjectName { get; set; }
         static public List<string> namePrefixes;
         static public List<string> userFolders = new List<string>();
         static public List<string> customFolders = new List<string>();
         string folderNamePattern = @"^[A-Za-z0-9-_\[\]{}!@#$%^&\(\) +=.,;`~№]+$";
         List<System.Windows.Controls.CheckBox> foldersList;
+        SoundPlayer sndplayr;
 
 
         public MainWindow()
@@ -36,7 +38,19 @@ namespace CoPF
             foldersList = new List<System.Windows.Controls.CheckBox>() {cb_drawings, cb_models, cb_ideas, cb_photo, cb_proxy, cb_references, cb_renders};
         }
 
+        void PlayerStart()
+        {
+            sndplayr = new SoundPlayer("sound.wav");
+            sndplayr.PlayLooping();
+        }
+        void PlayerStop()
+        {
+            if (sndplayr != null)
+            {
+                sndplayr.Stop();
+            }
 
+        }
 
         // METHODS
         void LoadPrefixes()
@@ -254,5 +268,19 @@ namespace CoPF
             cb_test.IsEnabled = false;
         }
 
+        private void cb_music_Checked(object sender, RoutedEventArgs e)
+        {
+            PlayerStart();
+        }
+
+        private void cb_music_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PlayerStop();
+        }
+
+        private void bt_about_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBox.Show("Project Directory Creator\n\nby Alexander Ulianov\nfoster117@gmail.com\n\nmusic: Vectorman OST", "About");
+        }
     }
 }

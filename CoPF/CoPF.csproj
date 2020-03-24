@@ -111,7 +111,7 @@
     <Resource Include="back.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\sound_back.wav" />
+    <Resource Include="Resources\sound.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
