@@ -79,15 +79,5 @@ namespace CoPF.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] sound {
-            get {
-                object obj = ResourceManager.GetObject("sound", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
