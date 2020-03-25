@@ -20,12 +20,13 @@ namespace CoPF
         DataIO io = new DataIO();
         Regex regex;
         static public string Path { get; set; }
+        static public bool sound;
         static public List<string> namePrefixes;
         static public List<string> userFolders = new List<string>();
         static public List<string> customFolders = new List<string>();
         string folderNamePattern = @"^[A-Za-z0-9-_\[\]{}!@#$%^&\(\) +=.,;`~№]+$";
         List<System.Windows.Controls.CheckBox> foldersList;
-        SoundPlayer sndplayr;
+        SoundPlayer player;
 
 
         public MainWindow()
@@ -36,18 +37,19 @@ namespace CoPF
             cb_renders.IsChecked = true;
             LoadPrefixes();
             foldersList = new List<System.Windows.Controls.CheckBox>() {cb_drawings, cb_models, cb_ideas, cb_photo, cb_proxy, cb_references, cb_renders};
+            warning_tbl.Text = "WARNING:\nDirectory names are allowed to use only Latin characters, numbers and punctuation marks.\nThe following characters are not allowed:\n/ | \\ : * ? \" < > ";
         }
 
         void PlayerStart()
         {
-            sndplayr = new SoundPlayer("sound.wav");
-            sndplayr.PlayLooping();
+            player = new SoundPlayer("sound.wav");
+            player.PlayLooping();
         }
         void PlayerStop()
         {
-            if (sndplayr != null)
+            if (player != null)
             {
-                sndplayr.Stop();
+                player.Stop();
             }
 
         }
@@ -58,6 +60,14 @@ namespace CoPF
             namePrefixes = io.ReadData();
             comboPrefixList.ItemsSource = namePrefixes;
             tb_path.Text = MainWindow.Path;
+            if (!MainWindow.sound)
+            {
+                cb_music.IsChecked = false;
+            }
+            else
+            {
+                cb_music.IsChecked = true;
+            }
         }
 
         // EVENTS
@@ -218,18 +228,18 @@ namespace CoPF
                     {
                         projectDir.CreateSubdirectory(name);
                     }
+                    System.Windows.MessageBox.Show("Directories Successfully Created!" );
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show(projectPath + " already exists", "Error");
+                    System.Windows.MessageBox.Show(projectPath + "is already exists", "Error");
                 }
             }
-            catch (Exception)
+            catch (Exception z)
             {
 
-                System.Windows.MessageBox.Show("We have some problems with сreating folders");
-            }
-            
+                System.Windows.MessageBox.Show(z.Message, "Error");
+            } 
         }
 
         private void Bt_AddNewCustFolder_Click(object sender, RoutedEventArgs e)
@@ -271,16 +281,20 @@ namespace CoPF
         private void cb_music_Checked(object sender, RoutedEventArgs e)
         {
             PlayerStart();
+            MainWindow.sound = true;
+            io.WriteData(namePrefixes);
         }
 
         private void cb_music_Unchecked(object sender, RoutedEventArgs e)
         {
             PlayerStop();
+            MainWindow.sound = false;
+            io.WriteData(namePrefixes);
         }
 
         private void bt_about_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.MessageBox.Show("Project Directory Creator\n\nby Alexander Ulianov\nfoster117@gmail.com\n\nmusic: Vectorman OST", "About");
+            System.Windows.MessageBox.Show("Project Directory Creator\n\nby Alexander Ulianov\nfoster117@gmail.com\n\nmusic:\nSEGA Genesis Vectorman OST", "About");
         }
     }
 }

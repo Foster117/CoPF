@@ -14,6 +14,7 @@ namespace CoPF
                 FileStream filestream = File.Create(@"prefconfig.cpf");
                 BinaryWriter writer = new BinaryWriter(filestream);
 
+                writer.Write(MainWindow.sound);
                 writer.Write(MainWindow.Path);
                 writer.Write(namePrefixes.Count);
                 foreach (string prefix in namePrefixes)
@@ -36,11 +37,8 @@ namespace CoPF
 
             try
             {
+                MainWindow.sound = reader.ReadBoolean();
                 MainWindow.Path = reader.ReadString();
-                if (true)
-                {
-
-                }
                 int count = reader.ReadInt32();
                 for (int i = 0; i < count; i++)
                 {
